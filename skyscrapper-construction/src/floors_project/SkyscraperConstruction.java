@@ -44,20 +44,21 @@ public class SkyscraperConstruction {
 	}
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		SkyscraperConstruction obj = new SkyscraperConstruction();
-		System.out.print("Enter the total number of floors in the building: ");
-		int n = scanner.nextInt();
+		try (Scanner scanner = new Scanner(System.in)) {
+			SkyscraperConstruction obj = new SkyscraperConstruction();
+			System.out.print("Enter the total number of floors in the building: ");
+			int n = scanner.nextInt();
 
-		ArrayList<Integer> arr = new ArrayList<>();
+			ArrayList<Integer> arr = new ArrayList<>();
 
-		for (int day = 1; day <= n; day++) {
-			System.out.print("Enter the floor size given on day " + day + ": ");
-			int num = scanner.nextInt();
-			arr.add(num);
+			for (int day = 1; day <= n; day++) {
+				System.out.print("Enter the floor size given on day " + day + ": ");
+				int num = scanner.nextInt();
+				arr.add(num);
+			}
+
+			obj.floorsPlan(arr);
 		}
-
-		obj.floorsPlan(arr);
 
 	}
 }
